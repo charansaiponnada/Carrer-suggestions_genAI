@@ -13,7 +13,7 @@ def initialize_vertex_ai():
         raise ValueError("GEMINI_API_KEY environment variable not set. Please check your .env file.")
     
     genai.configure(api_key=api_key)
-    print("Google Generative AI SDK initialized successfully.")
+    print("✅ Google Generative AI SDK initialized successfully.")
 
 
 def generate_career_advice(quiz_results: dict) -> str:
@@ -24,7 +24,7 @@ def generate_career_advice(quiz_results: dict) -> str:
     # Initialize the model using the new library
     model = genai.GenerativeModel('gemini-pro')
 
-    # The prompt is exactly the same. No changes needed here.
+    # The prompt is exactly the same.
     prompt = f"""
     You are an expert career advisor for students in India. Your goal is to provide personalized, actionable, and encouraging advice.
 
