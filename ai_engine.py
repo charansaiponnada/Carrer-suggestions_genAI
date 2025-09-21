@@ -1,30 +1,30 @@
-import vertexai
-from vertexai.generative_models import GenerativeModel
 import os
 from dotenv import load_dotenv
+import google.generativeai as genai
 
 def initialize_vertex_ai():
-    """Initializes the Vertex AI SDK with the project and location."""
-    load_dotenv() # Make sure environment variables are loaded
-    PROJECT_ID = os.environ.get('GCLOUD_PROJECT')
-    if not PROJECT_ID:
-        raise ValueError("GCLOUD_PROJECT environment variable not set. Please check your .env file.")
-
-    # For this hackathon, let's use a region that supports Gemini well, like us-central1
-    LOCATION = "us-central1"
-    vertexai.init(project=PROJECT_ID, location=LOCATION)
-    print(f"Vertex AI initialized for project: {PROJECT_ID} in location: {LOCATION}")
+    """
+    Configures the Generative AI SDK with the API key.
+    The function name is kept for compatibility with main.py.
+    """
+    load_dotenv()
+    api_key = os.environ.get('GEMINI_API_KEY')
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY environment variable not set. Please check your .env file.")
+    
+    genai.configure(api_key=api_key)
+    print("Google Generative AI SDK initialized successfully.")
 
 
 def generate_career_advice(quiz_results: dict) -> str:
     """
-    Generates career advice using Google's Gemini model based on quiz results.
+    Generates career advice using the Gemini-Pro model via the Generative Language API.
     """
     
-    # Initialize the specific generative model we want to use
-    model = GenerativeModel("gemini-pro")
+    # Initialize the model using the new library
+    model = genai.GenerativeModel('gemini-pro')
 
-    # --- The Prompt ---
+    # The prompt is exactly the same. No changes needed here.
     prompt = f"""
     You are an expert career advisor for students in India. Your goal is to provide personalized, actionable, and encouraging advice.
 
@@ -55,6 +55,6 @@ def generate_career_advice(quiz_results: dict) -> str:
       ]
     }}
     """
-
+    
     response = model.generate_content(prompt)
     return response.text

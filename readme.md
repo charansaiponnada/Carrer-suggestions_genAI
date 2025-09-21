@@ -31,6 +31,8 @@ graph TD
     B --> E[Google Cloud Vertex AI];
 ````
 
+![System Architecture Diagram](./assets/system_architecture.png)
+
 ## 🛠️ Tech Stack
 
 * **Backend:** Python 3.9+, FastAPI, Uvicorn
