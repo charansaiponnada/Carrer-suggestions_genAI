@@ -1,0 +1,17 @@
+# Ignore Python's virtual environment
+.venv
+
+# Ignore our secret files
+.env
+firebase_credentials.json
+
+# Ignore Python cache files
+__pycache__/
+
+
+/*{
+{
+  "email": "mytest@email.com",
+  "password": "test@001"
+}
+}*/

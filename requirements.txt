@@ -1,0 +1,18 @@
+# The web framework we are using. The core of our backend.
+fastapi
+
+# An ASGI server to run our FastAPI application.
+uvicorn[standard]
+
+# This is for later, to handle our API keys and secrets safely.
+python-dotenv
+
+# The Google Cloud library to talk to the Vertex AI (Gemini) API.
+google-cloud-aiplatform
+
+
+pydantic[email]
+
+
+firebase_admin
+
