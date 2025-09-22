@@ -22,7 +22,7 @@ def generate_career_advice(quiz_results: dict) -> str:
     """
     
     # Initialize the model using the new library
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
     # The prompt is exactly the same.
     prompt = f"""

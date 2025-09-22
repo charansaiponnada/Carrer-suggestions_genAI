@@ -133,11 +133,15 @@ async def get_recommendation(data: dict):
         ai_response_text = generate_career_advice(quiz_results)
 
         # The AI should return a JSON string. We need to parse it into a real JSON object.
+        # NEW AND IMPROVED CODE
         try:
-            ai_response_json = json.loads(ai_response_text)
+            # Clean the string: remove markdown and leading/trailing whitespace
+            clean_response = ai_response_text.strip().replace("```json", "").replace("```", "")
+            
+            # Now, parse the clean string
+            ai_response_json = json.loads(clean_response)
             return ai_response_json
         except json.JSONDecodeError:
-            # If the AI messes up the JSON format, we send an error.
             raise HTTPException(status_code=500, detail=f"Failed to parse AI response. Raw response: {ai_response_text}")
 
     except Exception as e:
