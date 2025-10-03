@@ -16,3 +16,4 @@ pydantic[email]
 
 firebase_admin
 
+requests

@@ -14,4 +14,32 @@ __pycache__/
   "email": "mytest@email.com",
   "password": "test@001"
 }
+{
+  "email": "cherry@email.com",
+  "password": "cherry@123"
+}
 }*/
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCFXuppTZRMyQRTeXuAqs9OB6aE81PbXrg",
+    authDomain: "direct-variety-472811-m4.firebaseapp.com",
+    projectId: "direct-variety-472811-m4",
+    storageBucket: "direct-variety-472811-m4.firebasestorage.app",
+    messagingSenderId: "444498480023",
+    appId: "1:444498480023:web:3c6127ce9d7737daa992d2",
+    measurementId: "G-RCWEZFT1VD"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
